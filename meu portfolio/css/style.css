@@ -1,0 +1,280 @@
+/* ====== Paleta e Cores ====== */
+:root {
+  --cor-base: #D1C3B6;        /* bege pastel principal */
+  --cabecalho: #B3A08D;
+  --pastel-laranja: #e1ae6c;
+  --pastel-verde: #cd7e00;
+  --cor-destaque: #FFD700;
+  --cor-carrossel: #dd9d50;
+}
+
+/* ====== Base ====== */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  background-color: var(--cor-base);
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
+}
+h2 {
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--cor-destaque);
+}
+
+/* ====== Cabeçalho ====== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--cabecalho);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img{
+  max-width: 50px
+}
+
+nav a {
+  margin: 0 1rem;
+  font-weight: 500;
+}
+
+nav a.ativo {
+  color: var(--cor-destaque);
+}
+
+/* ====== Estrutura Geral ====== */
+.conteudo {
+  max-width: 1000px;
+  margin: 6rem auto;
+  padding: 0 1.5rem;
+}
+
+main {
+  background-color: var(--cor-base);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+}
+
+/* ====== Cartões ====== */
+.cartao {
+  position: relative;
+  flex: 0 0 280px;
+  background: var(--pastel-laranja);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  text-align: center;
+  margin: 0 1rem;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.cartao:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Input invisível para o clique */
+.cartao input[type="checkbox"] {
+  display: none;
+}
+
+/* Imagem (label clicável) */
+.cartao label {
+  display: block;
+  background-color: #f2f2f2;
+  height: 160px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+/* Descrição oculta por defeito */
+.cartao .descricao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.95);
+  color: #333;
+  padding: 1.2rem;
+  border-radius: 16px;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Quando o cartão é clicado */
+.cartao input:checked + label {
+  opacity: 0.3;
+}
+
+.cartao input:checked ~ .descricao {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ====== Carrossel ====== */
+.carousel-container {
+  overflow-x: auto;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+}
+
+.carousel-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+  background-color: var(--cor-carrossel);
+  border-radius: 10px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+/* ====== Gostos ====== */
+.gostos-section {
+  background-color: var(--pastel-verde);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.gostos-section .carousel-container .cartao {
+  background: var(--pastel-azul);
+}
+
+/* ====== Footer ====== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 0.9rem;
+  background-color: var(--cor-base);
+}
+/* ====== Sobre Mim (com imagem) ====== */
+.sobre-topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.foto-perfil {
+  flex: 0 0 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-placeholder {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-color: #e5ded3;
+  border: 4px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.texto-sobre {
+  flex: 1 1 400px;
+}
+
+.texto-sobre h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.texto-sobre p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ====== Ajuste Responsivo ====== */
+@media (max-width: 768px) {
+  .foto-perfil {
+    flex: 1 1 100%;
+  }
+  .img-placeholder {
+    width: 180px;
+    height: 180px;
+  }
+}
+/* ====== Secção Contactos ====== */
+
+.contactos h2 {
+  margin-bottom: 0rem;
+  color: #222;
+}
+
+.contactos p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #000000;
+}
+
+.icones-contacto {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.icones-contacto a {
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.icones-contacto a:hover {
+  background-color: #B3A08D;
+  transform: translateY(-2px);
+}
