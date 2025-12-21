@@ -100,14 +100,74 @@ footer {
   color: #666;
 }
 
-/* RESPONSIVO */
+/* ====== RESPONSIVO MOBILE ====== */
 @media (max-width: 768px) {
+
+  /* HEADER */
   header {
     flex-direction: column;
     gap: 10px;
+    padding: 1rem;
   }
 
-  .imagem-projeto {
-    height: 220px;
+  .logo img {
+    max-width: 40px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  /* CONTEÚDO */
+  .conteudo {
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  /* SERVIÇOS */
+  .servicos-grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .cartao-visual {
+    padding-top: 70%;
+  }
+
+  /* GOSTOS */
+  .gostos-section {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+  }
+
+  .carousel-container {
+    padding: 10px 0;
+  }
+
+  .cartao {
+    flex: 0 0 220px;
+    margin: 0 0.5rem;
+  }
+
+  .cartao label {
+    height: 140px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 1.5rem;
+    font-size: 0.9rem;
   }
 }
