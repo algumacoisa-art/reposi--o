@@ -1,0 +1,113 @@
+:root {
+  --cor-base: #D1C3B6;
+  --cabecalho: #B3A08D;
+  --cor-destaque: #FFD700;
+  --cor-fundo-servicos: #E5DCD0;
+  --cor-cartao: #463B34;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--cor-base);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--cabecalho);
+  position: sticky;
+  top: 0;
+}
+
+.logo img {
+  max-width: 50px;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+nav a.ativo {
+  color: var(--cor-destaque);
+}
+
+.conteudo {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+  background-color: var(--cor-fundo-servicos);
+  padding: 25px;
+  border-radius: 16px;
+}
+
+/* ===== CARTÃO ===== */
+.cartao-servico {
+  text-align: center;
+}
+
+/* remove seta default do details */
+.cartao-servico summary {
+  list-style: none;
+}
+.cartao-servico summary::-webkit-details-marker {
+  display: none;
+}
+
+.imagem-projeto {
+  aspect-ratio: 4 / 4;
+  height: 250px;
+  max-width: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.imagem-projeto:hover {
+  transform: translateY(-6px);
+}
+
+/* POPUP */
+.popover {
+  margin: 12px auto 0;
+  padding: 15px;
+  border-radius: 12px;
+  width: 250px;
+  background: rgb(255, 230, 187);
+  color: #333;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .imagem-projeto {
+    height: 220px;
+  }
+}

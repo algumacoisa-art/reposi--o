@@ -167,17 +167,6 @@ main {
   border-radius: 10px;
 }
 
-/* ====== Gostos ====== */
-.gostos-section {
-  background-color: var(--pastel-verde);
-  border-radius: 20px;
-  padding: 3rem;
-  text-align: center;
-}
-
-.gostos-section .carousel-container .cartao {
-  background: var(--pastel-azul);
-}
 
 /* ====== Footer ====== */
 footer {
@@ -277,4 +266,92 @@ footer {
 .icones-contacto a:hover {
   background-color: #B3A08D;
   transform: translateY(-2px);
+}
+.foto-perfil {
+  max-width: 300px;
+  max-width: 300px;
+  border-radius: 100%;
+  overflow: hidden;          /* MUITO IMPORTANTE */
+  background-color: #e0e0e0; /* fundo do círculo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foto-perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* ajusta a imagem ao círculo */
+}
+
+/* ====== RESPONSIVO MOBILE ====== */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+  }
+
+  .logo img {
+    max-width: 40px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  /* CONTEÚDO */
+  .conteudo {
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  /* SERVIÇOS */
+  .servicos-grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .cartao-visual {
+    padding-top: 70%;
+  }
+
+  /* GOSTOS */
+  .gostos-section {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+  }
+
+  .carousel-container {
+    padding: 10px 0;
+  }
+
+  .cartao {
+    flex: 0 0 220px;
+    margin: 0 0.5rem;
+  }
+
+  .cartao label {
+    height: 140px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+  }
 }

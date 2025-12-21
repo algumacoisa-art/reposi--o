@@ -1,0 +1,21 @@
+.imagem-projeto {
+    aspect-ratio: 4 / 4;
+    height: 250px;
+    object-fit: cover;
+    max-width: 250px;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+details summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.popover {
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    z-index: 10;
+    }
